@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Virtual Lab - Work and Power</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!-- Including Animate.css for animations -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <style>
+    /* Base styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(45deg, #1e3c72, #2a5298);
+      color: white;
+      text-align: center;
+    }
+    .container {
+      width: 80%;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      color: black;
+      line-height: 1.8;
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+    h1, h2 {
+      color: #ffcc00;
+      margin-bottom: 15px;
+    }
+    h3 {
+      color: #ffcc00;
+      margin-top: 10px;
+    }
+    p {
+      margin: 15px 0;
+      font-size: 16px;
+    }
+    ul, ol {
+      text-align: left;
+      display: inline-block;
+      margin: 15px 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background: white;
+      color: black;
+    }
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+    th, td {
+      padding: 12px;
+      text-align: center;
+    }
+    th {
+      background: #007bff;
+      color: white;
+    }
+    video {
+      padding: 20px;
+      max-width: 100%;
+      height: auto;
+    }
+    footer {
+      margin-top: 20px;
+      padding: 15px;
+      background: #007bff;
+      color: white;
+      font-size: 18px;
+    }
+    
+    /* Responsive Media Queries */
+    @media only screen and (max-width: 1024px) {
+      .container {
+        width: 90%;
+        padding: 15px;
+      }
+      h1, h2 {
+        font-size: 1.8em;
+      }
+      p {
+        font-size: 15px;
+      }
+      th, td {
+        padding: 10px;
+      }
+    }
+    @media only screen and (max-width: 768px) {
+      .container {
+        width: 95%;
+        padding: 10px;
+      }
+      h1, h2 {
+        font-size: 1.6em;
+      }
+      p {
+        font-size: 14px;
+      }
+      th, td {
+        padding: 8px;
+        font-size: 12px;
+      }
+    }
+    @media only screen and (max-width: 480px) {
+      .container {
+        width: 98%;
+        padding: 5px;
+      }
+      h1, h2 {
+        font-size: 1.4em;
+      }
+      p, ul, ol {
+        font-size: 12px;
+      }
+      th, td {
+        padding: 6px;
+        font-size: 10px;
+      }
+      video {
+        padding: 10px;
+      }
+    }
+  </style>
+  <script>
+    // Check if user is logged in; if not, redirect to login page
+    if (localStorage.getItem("loggedIn") !== "true") {
+      window.location.href = "login.html";
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1 class="animate__animated animate__fadeInDown">Welcome, <span id="userName"></span>, to the Virtual Lab</h1>
+  </header>
+  <div class="container animate__animated animate__fadeInUp">
+    <h2>Topic: To Determine the Relationship Between Work and Power</h2>
+    
+    <h2>Theory of the Experiment</h2>
+    <p>
+      THEORETICAL BACKGROUND: <br>
+      Work can be defined as the energy transfer between objects through some distance. Work is said to be done when a certain amount of force moves an object for a certain distance. It is calculated as the product of force applied and the distance moved in the direction of the force. <br>
+      Power is the amount of energy transferred or converted per unit time, meaning it refers to the rate at which work is performed. <br>
+      Work is related to the first law of motion because, to change the state of an object, a force must be applied; if that force causes displacement, work is done. <br>
+      <strong>W = F × D</strong> <br>
+      The second law directly links work with the concept of force. When a force is applied to accelerate an object, the object moves and work is done over the distance it travels. <br>
+      <strong>F = m × a</strong> <br>
+      Additionally, the work-energy theorem states that the net work done on an object is equal to the change in its kinetic energy. <br>
+      <strong>W<sub>net</sub> = ∆KE = KE<sub>final</sub> - KE<sub>initial</sub></strong>
+    </p>
+    
+    <!-- Video elements -->
+    <video controls height="400" width="400">
+      <source src="VID-20250212-WA0006.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+ 
+    <video controls height="400" width="400">
+      <source src="VID-20250310-WA0005.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <video controls height="400" width="400">
+      <source src="VID-20250310-WA0006.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <video controls height="400" width="400">
+      <source src="VID-20250310-WA0007.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <video controls height="400" width="400">
+      <source src="VID-20250310-WA0008.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+      
+    <h2>Apparatus</h2>
+    <ul class="left-align">
+      <li>Mass</li>
+      <li>Meter rule</li>
+      <li>Step/bench</li>
+      <li>Stopwatch</li>
+    </ul>
+    <h2>Method</h2>
+    <ol>
+      <li>Hold a mass at waist height and step up and down on the bench. Measure the displacement.</li>
+      <li>Hold masses in each hand and raise from down straight to above the shoulder. Measure the displacement.</li>
+      <li>Perform squats while holding masses and measure the displacement.</li>
+      <li>Raise your hand to shoulder level while holding a mass and measure displacement.</li>
+    </ol>
+    
+    <h2>Results</h2>
+    <table>
+      <tr>
+        <th>Exercise</th>
+        <th>Mass (kg)</th>
+        <th>Weight (N)</th>
+        <th>Distance per repetition (m)</th>
+        <th>No. of repetitions</th>
+        <th>Total distance moved (m)</th>
+        <th>Work done (J)</th>
+      </tr>
+      <tr>
+        <td>Step ups</td><td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <td>Shoulder raise</td><td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <td>Static lunges</td><td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <td>Squats</td><td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <td>Bicep curls</td><td></td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+    </table>
+    
+    <h2>Analysis</h2>
+    <p>Which activity transferred the most energy to the mass? Justify your answer.</p>
+    
+    <h2>Part B: Measuring Power</h2>
+    <p>In groups of 3 students, repeat the steps while recording time using a stopwatch.</p>
+    
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Mass (kg)</th>
+        <th>Depth of one squat (m)</th>
+        <th>Time (s)</th>
+        <th>Work done (J)</th>
+        <th>Power (W)</th>
+      </tr>
+      <tr>
+        <td>Step ups</td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <td>Shoulder raise</td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <td>Static lunges</td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <td>Squats</td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+      <tr>
+        <td>Bicep curls</td><td></td><td></td><td></td><td></td><td></td>
+      </tr>
+    </table>
+  </div>
+  <footer class="animate__animated animate__fadeInUp">
+    <p>&copy; 2025 Virtual Lab. All Rights Reserved.</p>
+  </footer>
+  <script>
+    // Display the username in the header
+    document.getElementById("userName").textContent = localStorage.getItem("username") || "User";
+  </script>
+</body>
+</html>
